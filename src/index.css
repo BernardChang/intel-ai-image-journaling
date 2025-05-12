@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- CSS variables (live-editable) ---------- */
+:root {
+  --c-primary:   #6366f1;   /* indigo-500 */
+  --c-accent-bg: #fce7f3;   /* pink-100  */
+  --c-bg-app:    #ffffff;   /* page background */
+}
+
+[data-theme='midnight'] {
+  --c-primary:   #06b6d4;
+  --c-accent-bg: #164e63;
+  --c-bg-app:    #0f172a;
+}
+
+/* apply the page background */
+body {
+  background: var(--c-bg-app);
+}
+
+/* ---------- custom utilities ---------- */
+@layer utilities {
+  .card-bg {
+    @apply bg-white/70 dark:bg-slate-800/70 backdrop-blur-md shadow-sm;
+  }
+  .hover-zoom:hover img {
+    @apply scale-105 transition-transform duration-200;
+  }
+  .pill-input {
+    @apply rounded-full border-2 px-3 py-1 text-xs
+      bg-[color:var(--c-accent-bg)] bg-opacity-60
+      ring-2 ring-transparent focus:ring-[color:var(--c-primary)]
+      outline-none transition;
+  }
+  .kebab-btn {
+    @apply flex h-8 w-8 items-center justify-center rounded-full
+      bg-[color:var(--c-accent-bg)] bg-opacity-80 shadow
+      hover:scale-110 active:scale-95 transition;
+  }
+
+  /* ★ stronger page-bg tint for in-month calendar cells */
+  .calendar-cell {
+    background-color: color-mix(in srgb, var(--c-bg-app) 60%, white);
+  }
+  .calendar-cell:hover {
+    background-color: color-mix(in srgb, var(--c-bg-app) 75%, white);
+  }
+}
