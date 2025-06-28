@@ -4,11 +4,11 @@ import CaptureCamera from './CaptureCamera';
 import PhotoList from './PhotoList';
 
 const filters = {
-  all:  { label: 'All',   fn: () => true },
-  today:{ label: 'Today', fn: p => isAfter(p.takenAt, startOfDay(new Date())) },
-  week: { label: 'Week',  fn: p => isAfter(p.takenAt, startOfWeek(new Date(), { weekStartsOn:0 })) },
-  month:{ label:'Month',  fn: p => isAfter(p.takenAt, startOfMonth(new Date())) },
-  top:  { label:'Top',    fn: () => true }  // placeholder – will sort by AI later
+  all:   { label: 'All',   fn: () => true },
+  today: { label: 'Today', fn: p => isAfter(p.takenAt, startOfDay(new Date())) },
+  week:  { label: 'Week',  fn: p => isAfter(p.takenAt, startOfWeek(new Date(), { weekStartsOn:0 })) },
+  month: { label: 'Month', fn: p => isAfter(p.takenAt, startOfMonth(new Date())) },
+  top:   { label: 'Top',   fn: () => true },  // placeholder – will sort by AI later
 };
 
 export default function GalleryView() {

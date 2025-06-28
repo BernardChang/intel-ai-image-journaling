@@ -3,7 +3,7 @@ import GalleryView   from './components/GalleryView';
 import CalendarView  from './components/CalendarView';
 import DownloadView  from './components/DownloadView';
 import SettingsPanel from './components/SettingsPanel';
-import { Settings2 }  from 'lucide-react';
+import { Settings2 } from 'lucide-react';
 
 export default function App() {
   const [tab, setTab] = useState('gallery');       // gallery | calendar | download
